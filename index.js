@@ -63,7 +63,7 @@ app.post("/webhook", async (req, res) => {
 
       const senderId = webhookEvent.sender.id;
       if (webhookEvent.message) {
-        const message = await genAIResponse(webhookEvent.message.text); // Add await here
+        const message = await genAIResponse(webhookEvent.message.text); // Add await here for controll async workings
         await sendMessage(senderId, message);
       }
     }
